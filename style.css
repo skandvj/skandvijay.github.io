@@ -282,7 +282,7 @@ body {
    .about-me {
     opacity: 1;
     transform: translateY(50px);
-    transition: all 1s ease-in;
+/*     transition: all 1s ease-in; */
 }
 
 .about-content {
