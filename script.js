@@ -80,9 +80,9 @@ gsap.from(aboutSection, {
     scale: 0.95,       // Slightly scale up for a zoom effect
     rotationX: 15,     // Add a slight 3D tilt for depth
     rotationY: -10,    // Slight tilt for more perspective
-    duration: 0.5,     // Smooth duration
+    duration: 0.3,     // Smooth duration
     ease: "power4.out", // Smooth, soft easing for better flow
-    stagger: 0.05       // Stagger multiple elements within the section
+    stagger: 0.1       // Stagger multiple elements within the section
 });
 
 
