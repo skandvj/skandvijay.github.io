@@ -80,10 +80,11 @@ gsap.from(aboutSection, {
     scale: 0.95,       // Slightly scale up for a zoom effect
     rotationX: 15,     // Add a slight 3D tilt for depth
     rotationY: -10,    // Slight tilt for more perspective
-    duration: 0.3,     // Smooth duration
+    duration: 0.2,     // Shorter duration for faster animation
     ease: "power4.out", // Smooth, soft easing for better flow
-    stagger: 0.1       // Stagger multiple elements within the section
+    stagger: 0.05      // Faster stagger for quicker sequences
 });
+
 
 
 // Hero animation with Three.js
