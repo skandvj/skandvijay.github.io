@@ -293,7 +293,7 @@ body {
     align-items: center; /* Ensures vertical alignment */
     opacity: 0;
     transform: translateY(20px);
-    transition: var(--transition);
+/*     transition: var(--transition); */
     text-align: justify; 
 /*     transition: all 1s ease-in; */
 
