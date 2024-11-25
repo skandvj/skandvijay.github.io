@@ -295,14 +295,14 @@ body {
     transform: translateY(20px);
     transition: var(--transition);
     text-align: justify; 
-    transition: all 1s ease-in;
+/*     transition: all 1s ease-in; */
 
 }
 
 .about-content.animate {
     opacity: 1;
     transform: translateY(0);
-    transition: all 1s ease-in;
+/*     transition: all 1s ease-in; */
 
 }
 
