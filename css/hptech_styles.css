@@ -1,0 +1,185 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to right, #f7f7f7, #d9d9d9); 
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+header h1 {
+    font-size: 36px;
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 18px;
+    color: #777;
+    margin: 10px 0 0;
+    font-style: italic;
+}
+
+section {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
+}
+
+h2 {
+    font-size: 28px;
+    color: #002c54; /* Dark blue for a professional look */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+a {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #002c54; /* Dark blue background */
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    background: #004a8d; /* Lighter blue on hover */
+    transform: translateY(-2px);
+}
+
+.cover-photo img {
+    height: 200px;
+    width: auto;    
+    object-fit: contain; /* Ensures the image fits within the container without zooming or cropping */
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out;
+    margin-top: 20px; /* Adds spacing above the image */
+    /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); Soft shadow around the image */
+}
+
+
+
+
+/* body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: #1c2833;
+    border-bottom: 4px solid #3498db;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 42px;
+    color: #f7f9f9;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 18px;
+    color: #d5d8dc;
+    margin: 10px 0 0;
+    font-style: italic;
+}
+
+section {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 850px;
+    background: #2e4053;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+    font-size: 28px;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+a {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #3498db;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    background: #2e86c1;
+    transform: translateY(-2px);
+}
+.cover-photo img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; 
+    object-fit: cover;
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out;
+    margin-top: 30px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Adds a soft shadow around the image */
+}
+
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    a {
+        padding: 10px 20px;
+    }
+} */

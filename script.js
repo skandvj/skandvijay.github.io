@@ -1,19 +1,17 @@
 // GSAP Registration
 gsap.registerPlugin(ScrollTrigger);
 
-// // Custom cursor initialization
-// const cursor = document.querySelector('.cursor');
-// const cursorFollower = document.querySelector('.cursor-follower');
-// document.addEventListener('mousemove', (e) => {
-//     gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.1 });
-//     gsap.to(cursorFollower, { x: e.clientX, y: e.clientY, duration: 0.3 });
-// });
+function scheduleCall() {
+    // Replace with your Calendly link
+    var calendlyLink = "https://calendar.google.com/calendar/u/0/r/week?hl=en";
+
+    // Open the link in a new tab
+    window.open(calendlyLink, '_blank');
+}
 
 
-
-// Typing effect setup
 const typingText = document.querySelector('.dynamic-text');
-const words = ['Aspiring Product Manager', 'Tech Enthusiast', 'Community Builder', 'Former Software Engineer'];
+const words = ['Aspiring Product Manager', 'Data Science Enthusiast', 'Community Builder', 'Former Software Engineer'];
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
@@ -34,7 +32,13 @@ function typeEffect() {
 }
 typeEffect();
 
-gsap.registerPlugin(ScrollTrigger);
+// Add event listener to the "SV" logo to scroll to the top of the page
+document.getElementById('scroll-to-top').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0, // Scroll to the top of the page
+        behavior: 'smooth' // Smooth scroll effect
+    });
+});
 
 
 
@@ -71,19 +75,19 @@ const aboutSection = document.querySelector(".about-me");
 gsap.from(aboutSection, {
     scrollTrigger: {
         trigger: aboutSection,
-        start: "top 80%", // Trigger animation when 80% of the section is in the viewport
-        end: "top 50%", // End the animation at 50% into the viewport
-        toggleActions: "play none none reverse", // Play on entering and reverse on leaving
+        start: "top 80%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
     },
-    opacity: 0,        // Fade-in from transparent
-    y: 80,             // Start from below and move up
-    scale: 0.95,       // Slightly scale up for a zoom effect
-    rotationX: 15,     // Add a slight 3D tilt for depth
-    rotationY: -10,    // Slight tilt for more perspective
-    ease: "power4.out", // Smooth, soft easing for better flow
-    stagger: 0.05      // Faster stagger for quicker sequences (if needed)
+    opacity: 1,        // Start visible
+    y: 0,              // No vertical movement
+    scale: 1,          // No scaling effect
+    rotationX: 0,      // No rotation
+    rotationY: 0,      // No rotation
+    duration: 0.5,     // Shorten duration for a quicker transition
+    ease: "power4.out",
+    stagger: 0.1
 });
-
 
 
 
@@ -130,6 +134,8 @@ function animateParticles() {
 }
 animateParticles();
 
+
+
 // Achievements Logic
 // Achievements Logic
 const achievements = [
@@ -138,7 +144,7 @@ const achievements = [
         text: 'x2 Best Employee award from Gap Inc.',
     },
     {
-        image: 'Images/nasscom.png',
+        image: 'Images/nasscom_certificate.png',
         text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.',
     },
     {
@@ -216,12 +222,17 @@ document.querySelector('.menu-btn').addEventListener('click', () => {
     document.querySelector('.nav-links').classList.toggle('show');
 });
 
-// Form submission alert
-document.getElementById('contact-form').addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    e.target.reset();
-});
+function openResume() {
+    window.open("Skand_Vijay.pdf", "_blank");
+}
+
+
+// // Form submission alert
+// document.getElementById('contact-form').addEventListener('submit', e => {
+//     e.preventDefault();
+//     alert('Thank you for your message! I will get back to you soon.');
+//     e.target.reset();
+// });
 
 // Project canvas particle effect
 document.querySelectorAll('.project-canvas').forEach(canvas => {

@@ -1,0 +1,126 @@
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #d9e3f0); /* CMU-inspired soft gradient */
+    color: #333; /* Dark text for contrast */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Cover Photo Section */
+.cover-photo img {
+    width: 100%; /* Ensures the image stretches across the full width */
+    height: auto; /* Maintains aspect ratio */
+    max-width: 1200px; /* Limits the width to 1200px */
+    max-height: 200px; /* Restricts height to prevent distortion */
+    object-fit: contain; /* Ensures the full image is visible without cropping */
+    border-radius: 8px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+
+/* Styling for Text Inside Cover Photo */
+.cover-photo header {
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6); /* Make text stand out on image */
+    padding: 20px;
+    background: rgba(128, 0, 0, 0.7); /* CMU Red with semi-transparency */
+    border-radius: 8px;
+    max-width: 80%; /* Limit width for better readability */
+    margin: 0 auto; /* Center-align */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: #9c1c2d; /* CMU Red for header */
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 0;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+/* Section Styling (Cards with CMU Accent) */
+section {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 1000px;
+    background: #ffffff; /* White background for sections */
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 6px solid #9c1c2d; /* CMU Red accent */
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Headings */
+h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f1c40f; /* Soft Gold for subtle elegance */
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Button Styles */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #9c1c2d; /* CMU Red for buttons */
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a:hover {
+    background: #b33939; /* Slightly darker CMU Red on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(204, 41, 41, 0.4);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50; /* Soft Dark Blue for footer */
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    a {
+        padding: 10px 20px;
+    }
+}

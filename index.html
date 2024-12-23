@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skand Vijay - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@
     <nav class="navbar custom-navbar">
         <div class="nav-content">
             <div class="logo">
-                <span class="logo-text">SV</span>
+                <span class="logo-text" id="scroll-to-top">SV</span>
             </div>
             <div class="nav-links">
                 <a href="#about-me">About</a>
@@ -42,155 +43,329 @@
         </div>
     </nav>
     
+<!-- Hero Section -->
+<section id="about" class="section hero">
+    <!-- Overlay Element -->
+    <div class="hero-overlay"></div>
 
-    <!-- Hero Section -->
-    <section id="about" class="section hero">
-        <canvas id="about-background"></canvas>
+    <canvas id="about-background"></canvas>
 
-        <div class="section-content hero-content">
-            <div class="hero-text">
-                <h1>Skand Vijay</h1>
-                <div class="typing-container">
-                    <span class="static-text">I'm a </span>
-                    <span class="dynamic-text"></span>
-                </div>
-                <p class="hero-description">
-                    Transforming user requirements into impactful products.
-                </p>
-                <div class="hero-cta">
-                    <a href="#case-studies" class="cta-button">View Case Studies</a>
-                    <a href="#contact" class="cta-button secondary">Get in Touch</a>
-                </div>
+    <div class="section-content hero-content">
+        <div class="hero-text">
+            <h1>Skand Vijay</h1>
+            <div class="typing-container">
+                <span class="static-text">I'm a </span>
+                <span class="dynamic-text"></span>
             </div>
-            <div class="hero-visual">
-                <canvas id="hero-canvas"></canvas>
-                <div id="achievements">
-                    <div id="achievement-container">
-                        <img id="achievement-image" src="Images/award.png" alt="Achievement" />
-                        <p id="achievement-text"></p>
-                    </div>
+            <p class="hero-description">
+                Transforming user requirements into impactful products.
+            </p>
+            <div class="hero-cta">
+                <button class="cta-button" onclick="scheduleCall()">Schedule a Call</button>
+                <a href="mailto:skandv@andrew.cmu,edu?subject=Let's%20Connect&body=Hi%20Skand,%0A%0A%20I'm%20interested%20in%20connecting%20with%20you.%20Looking%20forward%20to%20hearing%20from%20you.%0A%0ABest%20Regards",%0A%0A" class="cta-button secondary">Send Email</a>
+            </div>
+            
+        </div>
+        <div class="hero-visual">
+            <canvas id="hero-canvas"></canvas>
+            <div id="achievements">
+                <div id="achievement-container">
+                    <img id="achievement-image" src="Images/award.png" alt="Achievement" />
+                    <p id="achievement-text"></p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="about-me" class="section about-me">
         <div class="container">
+            <header class="section-header">
+                <h2 class="section-title">About Me</h2>
+            </header>
             <div class="about-content">
                 <div class="about-photo">
                     <img src="Images/Skand Profile.jpeg" alt="Skand Vijay">
                 </div>
                 <div class="about-text">
-                    <h2>About Me</h2>
                     <p>
-                        Hello! I’m <strong>Skand Vijay,</strong> a driven professional and Master's student in Information Systems at Carnegie Mellon University. With a passion for integrating technology with business strategies, I am continuously learning to stay ahead of future trends. My academic journey includes advanced coursework like Generative AI, Intro to Deep Learning (a Ph.D.-level course), Data Science for Product Managers, and Product Management Essentials. To broaden my expertise, I’m also exploring Accounting and Financial Analytics, Managing Disruptive Technology, and leadership through my role as Vice President of the Analytics Club at CMU Heinz.                    </p>
+                        Hello! I’m <strong>Skand Vijay,</strong> a driven professional and Master's student in Information Systems at Carnegie Mellon University. With a passion for integrating technology with business strategies, I am continuously learning to stay ahead of future trends. My academic journey includes advanced coursework like Generative AI, Intro to Deep Learning (a Ph.D.-level course), Data Science for Product Managers, and Product Management Essentials. To broaden my expertise, I’m also exploring Accounting and Financial Analytics, Managing Disruptive Technology, and leadership through my role as Vice President of the Analytics Club at CMU Heinz.                    
                     </p>
-                    During my tenure at Gap Inc., I earned the prestigious Best Employee of the Year award twice for being the Best Peer to Work With, a testament to my collaborative spirit and dedication. I led impactful projects, including automating financial processes to reduce a $10 million backlog risk and delivering business intelligence solutions that streamlined operations across teams.
                     <p>
+                        During my tenure at Gap Inc., I earned the prestigious Best Employee of the Year award twice for being the Best Peer to Work With, a testament to my collaborative spirit and dedication. I led impactful projects, including automating financial processes to reduce a $10 million backlog risk and delivering business intelligence solutions that streamlined operations across teams.
+                    </p>
                     <p>
                         When I’m not optimizing workflows or launching AI products, I’m deeply committed to my community. I take great pride in organizing events that foster learning and collaboration, and I actively mentor aspiring professionals, helping them achieve their academic and career goals. Engaging with the community energizes me, and I am passionate about supporting others on their journey toward success.
-
                     </p>
-                </div>
-            </div>
-            <div class="skills-section">
-                <div class="skills-list">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li><strong>Programming:</strong> Python, Java, C++, SQL</li>
-                        <li><strong>Product:</strong> Jira, Confluence, ServiceNow, Google Analytics</li>
-                        <li><strong>AI/ML:</strong>Deep Learning, NumPy, Pandas, Matplotlib, PyTorch, TensorFlow</li>
-                        <li><strong>Software:</strong>SpringBoot, Kafka, API Design</li>
-                        <li><strong>Coursework:</strong>PM Essentials, Data Science for PM, Generative AI</li>
-                    </ul>
-                </div>
-                <div class="tools-list">
-                    <h3>Tools</h3>
-                    <ul>
-                        <li><strong>Cloud:</strong> Google Cloud Platform, AWS</li>
-                        <li><strong>Database:</strong> MySQL, Oracle Financial, Oracle R12, Database Design</li>
-                        <li><strong>Visualization:</strong> Power BI,Tableau, Oracle Bi, Excel(Macros, VLOOKUP)</li>
-                        <li><strong>Automation:</strong> Selenium, PL/SQL</li>
-                        
-                    </ul>
-                    <div class="domain-list">
-                        <h3>Domain</h3>
-                        <ul>
-                            <li> Product Management, Data Science, AI/ML, Software Development</li>
-                        </ul>
                 </div>
             </div>
         </div>
     </section>
     
+            <section id="skills" class="skills-section">
+                <div class="container">
+                    <h2>Skills & Tools</h2>
+                    <!-- Programming Expertise Category -->
+                    <div class="category">
+                        <h4>Programming Languages</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=hGdCwhSHUe6L&format=png&color=000000" alt="Python">
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=TpULddJc4gTh&format=png&color=000000" alt="C++">
+                                <span>C++</span>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=13679&format=png&color=000000" alt="Java">
+                                <span>Java</span>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Domain Expertise Category -->
+                     <div class="category">
+                        <h4> Technologies</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=kTuxVYRKeKEY&format=png&color=000000" alt="Gen AI">
+                                <span>Generative AI</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=DNtWqR6qGfix&format=png&color=000000" alt="Deep Learning">
+                                <span>Deep Learning & Neural Networks</span>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=4hGUZoWc6Eyu&format=png&color=000000" alt="Machine Learning">
+                                <span>Machine Learning</span>
+                            </div>
+
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=A3Ulk2RcONKs&format=png&color=000000" alt="SpringBoot">
+                                <span>SpringBoot</span>
+                            </div>
+                            
+                           
+                        </div>
+                    </div>
+                    <!-- AI/ML Skills Category -->
+                    <div class="category">
+                        <!-- PyTorch, Huggingface, Tensorflow, NumPy, Pandas, SciPy, Scikit Learn, Matplotlib, SpaCy -->
+                        <h4>Libraries & Framework</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=LMTLvMIHsh1F&format=png&color=000000" alt="Hugging Face">
+                                <span>Hugging Face</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=O6SWwpPIM0GB&format=png&color=000000" alt="PyTorch">
+                                <span>PyTorch</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/color/64/tensorflow.png" alt="TensorFlow">
+                                <span>TensorFlow</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=aR9CXyMagKIS&format=png&color=000000" alt="NumPy">
+                                <span>Numpy</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=xSkewUSqtErH&format=png&color=000000" alt="Pandas">
+                                <span>Pandas</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=107949&format=png&color=228BE6" alt="SciPy">
+                                <span>SciPy</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=79UIJqAheZD5&format=png&color=000000" alt="Matplotlib">
+                                <span>Matplotlib</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=63777&format=png&color=000000" alt="Copilot">
+                                <span>Github Copilot</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                     <!-- Cloud Infrastructure Skills Category -->
+                     <div class="category">
+                        <h4>Cloud Infrastructure</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=WHRLQdbEXQ16&format=png&color=000000" alt="GCP">
+                                <span>Google Cloud Platform</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=mHi46t5vguiz&format=png&color=000000" alt="AWS">
+                                <span>AWS</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=VLKafOkk3sBX&format=png&color=000000" alt="Azure">
+                                <span>Microsoft Azure</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=39913&format=png&color=000000" alt="Oracle">
+                                <span>Oracle Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Management Frameworks Category -->
+                    <div class="category">
+                        <h4>Product Analytics & Frameworks</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=vA4PyBwFKehj&format=png&color=000000" alt="SDLC">
+                                <span>Software Development Life Cycle</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=lsWVM6aEFXVF&format=png&color=000000" alt="Agile">
+                                <span>Agile Methodologies</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=y0Jduit6ghru&format=png&color=000000" alt="OKRs">
+                                <span>OKRs</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=UUxoBdPF5jk2&format=png&color=000000" alt="RICE">
+                                <span>RICE Scoring Model</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=wEPISyiOyPQs&format=png&color=000000" alt="MoSCoW">
+                                <span>MoSCoW</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=uSom6phQLqJa&format=png&color=000000" alt="Financial">
+                                <span>Financial Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+            <!-- Data Analysis Skills Category -->
+                    <div class="category">
+                        <h4>Data Analysis</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=QSjnrUKYMnxO&format=png&color=000000" alt="sql">
+                                <span>SQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=03aYi0fY0D9X&format=png&color=228BE6" alt="Power BI">
+                                <span>Power BI</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=BEMhRoRy403e&format=png&color=000000" alt="Excel">
+                                <span>Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Management Skills Category -->
+                    <div class="category">
+                        <h4>Tools</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=7EZ6mRn825lD&format=png&color=228BE6" alt="Jira">
+                                <span>Jira</span>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=0TWmOdiNjpFh&format=png&color=228BE6" alt="Confluence">
+                                <span>Confluence</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=V5cGWnc9R4xj&format=png&color=000000" alt="Google Analytics">
+                                <span>Google Analytics</span>
+                            </div>
+                            <div class="skill-item">
+                                <img src="https://img.icons8.com/?size=100&id=52539&format=png&color=000000" alt="Git">
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                     
+                </div>
+            </section>
+                
+    
     <div id="experience" class="section">
         <div class="section-content">
-          <h2 class="section-title">Experience</h2>
-          
-          <div class="experience-grid">
-            <!-- CMU Experience Card -->
-            <div class="exp-study-card b">
-              <div class="exp-study-image">
-                <img src="Images/cmu.jpg" alt="CMU" class="company-logo">
-              </div>
-              <div class="exp-study-content">
-                <h3>Vice President</h3>
-                <div class="exp-study-details">
-                  <div class="company-info">
-                    <h4>Analytics Club, Heinz</h4>
-                    <p class="duration">November 2024 - Present</p>
-                  </div>
-                  <div class="experience-details">
-                    <ul>
-                    </ul>
-                  </div>
+            <h2 class="section-title">Experience</h2>
+    
+            <div class="experience-grid">
+                <!-- CMU Experience Card -->
+                <div class="exp-study-card b">
+                    <div class="exp-study-image">
+                        <img src="Images/cmu.jpg" alt="CMU" class="company-logo">
+                    </div>
+                    <div class="exp-study-content">
+                        <h3>Vice President</h3>
+                        <div class="exp-study-details">
+                            <div class="company-info">
+                                <h4>Analytics Club, Heinz</h4>
+                                <p class="duration">November 2024 - Present</p>
+                            </div>
+                            <div class="experience-details">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more-container">
+                        <a href="experience/cmu_experience.html" class="view-more-btn">View More</a>
+                    </div>
                 </div>
-              </div>
-            </div>
-      
-            <!-- HP Tech Ventures Experience Card -->
-            <div class="exp-study-card b">
-              <div class="exp-study-image">
-                <img src="Images/hptech.webp" alt="HP Tech Ventures" class="company-logo">
-              </div>
-              <div class="exp-study-content">
-                <h3>Business Analyst</h3>
-                <div class="exp-study-details">
-                  <div class="company-info">
-                    <h4>HP Tech Ventures</h4>
-                    <p class="duration">September 2024 - October 2024</p>
-                  </div>
-                  <div class="experience-details">
-                    <ul>
-                    </ul>
-                  </div>
+    
+                <!-- HP Tech Ventures Experience Card -->
+                <div class="exp-study-card b">
+                    <div class="exp-study-image">
+                        <img src="Images/hptech.webp" alt="HP Tech Ventures" class="company-logo">
+                    </div>
+                    <div class="exp-study-content">
+                        <h3>Business Analyst</h3>
+                        <div class="exp-study-details">
+                            <div class="company-info">
+                                <h4>HP Tech Ventures</h4>
+                                <p class="duration">September 2024 - October 2024</p>
+                            </div>
+                            <div class="experience-details">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more-container">
+                        <a href="experience/hptech_experience.html" class="view-more-btn">View More</a>
+                    </div>
                 </div>
-              </div>
-            </div>
-      
-            <!-- Gap Inc Experience Card -->
-            <div class="exp-study-card b">
-              <div class="exp-study-image">
-                <img src="Images/gap.svg" alt="Gap Inc" class="company-logo">
-              </div>
-              <div class="exp-studycontent">
-                <h3>Software Engineer/Data Analyst</h3>
-                <div class="exp-study-details">
-                  <div class="company-info">
-                    <h4>Gap Inc</h4>
-                    <p class="duration">June 2022 - July 2024</p>
-                  </div>
-                  <div class="experience-details">
-                    <ul>
-                    </ul>
-                  </div>
+    
+                <!-- Gap Inc Experience Card -->
+                <div class="exp-study-card b">
+                    <div class="exp-study-image">
+                        <img src="Images/gap.svg" alt="Gap Inc" class="company-logo">
+                    </div>
+                    <div class="exp-study-content">
+                        <h3>Software Engineer/Data Analyst</h3>
+                        <div class="exp-study-details">
+                            <div class="company-info">
+                                <h4>Gap Inc</h4>
+                                <p class="duration">June 2022 - July 2024</p>
+                            </div>
+                            <div class="experience-details">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more-container">
+                        <a href="experience/gap_experience.html" class="view-more-btn">View More</a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-
+    </div>
+    
+    
 
 <!-- Education Section -->
 <section id="education" class="education-section">
@@ -199,8 +374,9 @@
         <div class="education-card">
             <div class="card-content">
                 <img src="Images/cmu.jpg" alt="Carnegie Mellon University" class="school-logo">
-                <h3>Master of Information Systems Management</h3>
-                <h4>Carnegie Mellon University</h4>
+                <h4>Master of Information Systems Management</h3>
+                <p class="education title">Carnegie Mellon University</p>
+                    <p class="CGPA">CGPA - 3.85</p>
                 <p class="timeline-date">2024 - Present</p>
             </div>
         </div>
@@ -208,7 +384,8 @@
             <div class="card-content">
                 <img src="Images/vit.png" alt="VIT University" class="school-logo">
                 <h3>Bachelor of Technology</h3>
-                <h4>Vellore Institute of Technology, Vellore</h4>
+                <p class="education title">Vellore Institute of Technology, Vellore</p>
+                <p class="CGPA">CGPA - 3.96</p>
                 <p class="timeline-date">2018 - 2022</p>
             </div>
         </div>
@@ -219,9 +396,10 @@
 
 <!-- Projects Section -->
 <section id="projects" class="section projects">
-    <div class="section-content a">
+    <div class="section-content">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
+
             <!-- Project Card 1 -->
             <div class="project-card">
                 <div class="project-content">
@@ -229,9 +407,9 @@
                         <img src="Images/speechclassification.png" class="project-image" alt="AI Frame Level Speech Classification" />
                     </div>
                     <div class="project-info">
-                        <h3>AI Frame Level Speech Classification</h3>
-                        <h4><p>Classification model to classify phonemes from pre-processed speech utterances.</p></h4>
-                        <ul>
+                        <h3 class="project-title">AI Frame Level Speech Classification</h3>
+                        <p class="project-description">Classification model to classify phonemes from pre-processed speech utterances.</p>
+                        <ul class="project-highlights">
                             <li>Processed 19M speech frames</li>
                             <li>Optimized training time by 10%</li>
                             <li>Implemented on GCP platform</li>
@@ -240,7 +418,6 @@
                             <span>Python</span>
                             <span>Numpy</span>
                             <span>GCP</span>
-                            <span>Python</span>
                             <span>Pandas</span>
                         </div>
                         <!-- <a href="projects/speech-classification.html" class="view-more-btn">View More</a> -->
@@ -248,16 +425,16 @@
                 </div>
             </div>
 
-            <!-- Project Card 2 (SketchAI) -->
+            <!-- Project Card 2 -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-visual">
                         <img src="Images/sketchai.webp" class="project-image" alt="SketchAI" />
                     </div>
                     <div class="project-info">
-                        <h3>SketchAI</h3>
-                        <h4><p>AI Powered Platform which converts user sketches into product-ready images.</p></h4>
-                        <ul>
+                        <h3 class="project-title">SketchAI</h3>
+                        <p class="project-description">AI Powered Platform which converts user sketches into product-ready images.</p>
+                        <ul class="project-highlights">
                             <li>Natural Language Processing (NLP) for real-time conversations</li>
                             <li>Integrated with CRM systems to fetch customer data</li>
                             <li>Deployed on AWS with serverless architecture</li>
@@ -272,16 +449,16 @@
                 </div>
             </div>
 
-            <!-- Project Card 3 (Virtual Assistant) -->
+            <!-- Project Card 3 -->
             <div class="project-card">
                 <div class="project-content">
                     <div class="project-visual">
                         <img src="Images/virtualasssistant.jpeg" class="project-image" alt="Virtual Assistant for Visually Impaired" />
                     </div>
                     <div class="project-info">
-                        <h3>Virtual Assistant for Visually Impaired</h3>
-                        <h4><p>Deep Learning-based prototype for end-to-end communication for Blind People.</p></h4>
-                        <ul>
+                        <h3 class="project-title">Virtual Assistant for Visually Impaired</h3>
+                        <p class="project-description">Deep Learning-based prototype for end-to-end communication for Blind People.</p>
+                        <ul class="project-highlights">
                             <li>OpenCV-based system for emotion, facial, and character recognition</li>
                             <li>Achieved 94% emotion recognition accuracy using CNN and 92% facial recognition accuracy with LBPH</li>
                             <li>Enabled voice commands for music and emergency text messages to families</li>
@@ -506,70 +683,154 @@
 
 
     <!-- Community Section -->
-    <section id="entrepreneurship" class="section entrepreneurship">
-        <div class="section-content">
-            <h2 class="section-title">Community Impact</h2>
-            <div class="community-showcase">
-                <div class="stats-container">
-                    <div class="community-content">
-                        <h3>Building Digital Community @hey.skand</h3>
-                        <p>Leading a transformation in career guidance through digital platforms</p>
-                        <div class="platform-grid"></div>
+<section id="entrepreneurship" class="section entrepreneurship">
+    <div class="section-content">
+        <h2 class="section-title">Community Impact</h2>
+        <div class="community-showcase">
+            <!-- Digital Transformation Section -->
+            <div class="community-content">
+                <h3>Building Digital Community @hey.skand</h3>
+                <p>Leading a transformation in career guidance through digital platforms</p>
+                <div class="platform-grid">
+                    <div class="platform-item">
+                        <i class="icon fa fa-graduation-cap"></i>
+                        <h4>Career Guidance</h4>
+                        <p>Guided 20+ high school students toward their dream universities.</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="5400000">5.4</span>
-                        <span class="stat-label">Total Engagements</span>
-                    </div>
-                    
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="10">10+</span>
-                        <span class="stat-label">Students Guided</span>
+                    <div class="platform-item">
+                        <i class="icon fa fa-users"></i>
+                        <h4>Mentorship Programs</h4>
+                        <p>Reviewed SOPs and resumes for 6+ master's students to refine their applications.</p>
                     </div>
                 </div>
-               
+            </div>
+
+            <!-- Community Stats -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5400000">5.4M</span>
+                    <span class="stat-label">Total Engagements</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">10+</span>
+                    <span class="stat-label">Students Guided</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">15+</span>
+                    <span class="stat-label">Workshops Conducted</span>
+                </div>
+            </div>
+
+            <!-- NGO and Environment Section -->
+            <div class="community-content">
+                <h3>NGO and Environmental Impact</h3>
+                <p>Making the world a better place through volunteering and environmental initiatives.</p>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <i class="icon fa fa-tree"></i>
+                        <h4>Plantation Drive</h4>
+                        <p>Planted 100+ trees to promote sustainable living and combat climate change.</p>
+                    </div>
+                    <div class="impact-item">
+                        <i class="icon fa fa-hand-holding-heart"></i>
+                        <h4>NGO Volunteer Work</h4>
+                        <p>Collaborated with NGOs to distribute education kits and improve literacy rates.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- 
+<section id="community" class="section community">
+    <div class="section-content">
+        <h2 class="section-title">Community Impact</h2>
+        <div class="community-showcase">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5400000">5.4M</span>
+                    <span class="stat-label">Total Engagements</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="10">10+</span>
+                    <span class="stat-label">Students Guided</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">15+</span>
+                    <span class="stat-label">Workshops Conducted</span>
+                </div>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <h4>NGO Collaboration</h4>
+                    <p>Partnered with local NGOs for education and plantation drives.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Plantation Drives</h4>
+                    <p>Organized 50+ tree plantation drives to promote sustainability.</p>
+                </div>
+                <div class="impact-item">
+                    <h4>Digital Career Guidance</h4>
+                    <p>Developed an online community impacting 10,000+ careers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
 
     <!-- Resume Section -->
-    <section id="resume" class="section resume">
-        <div class="section-content">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-container">
-                <div class="resume-preview">
-                    <iframe src="Skand_Vijay.pdf" class="resume-frame"></iframe>
-                </div>
-                <div class="resume-actions">
-                    <a href="Skand_Vijay.pdf" class="download-btn" download>Download PDF</a>
-                    <button class="view-btn" onclick="openResume()">View Full Screen</button>
-                </div>
+<section id="resume" class="section resume">
+    <div class="section-content">
+        <h2 class="section-title">Resume</h2>
+        <div class="resume-container">
+            <div class="resume-preview">
+                <iframe src="Skand_Vijay.pdf" class="resume-frame" title="Resume Preview"></iframe>
+            </div>
+            <div class="resume-actions">
+                <a href="Skand_Vijay.pdf" class="btn download-btn" download>Download PDF</a>
+                <button class="btn view-btn" onclick="openResume()">View Full Screen</button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Contact Section -->
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container text-center mt-5">
-            <h3 class="connect-heading">Let's Connect</h3>
-            <div class="d-flex justify-content-center mt-3">
-                <!-- Email Button -->
-                <a href="mailto:skandv@andrew.cmu.edu" class="btn btn-primary connect-btn email-btn mx-2">
-                    <i class="bi bi-envelope"></i>
-                </a>
-                
-                <!-- LinkedIn Button -->
-                <a href="https://www.linkedin.com/in/skandvijay" class="btn btn-info connect-btn linkedin-btn mx-2" target="_blank">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                
-                <!-- Contact Button -->
-                <a href="tel:+14129547409" class="btn btn-success connect-btn contact-btn mx-2">
-                    <i class="bi bi-person-lines-fill"></i>
-                </a>
-            </div>
+ <!-- Contact Section -->
+<section id="contact" class="section contact">
+    <div class="container text-center mt-5">
+        <h3 class="connect-heading">Let’s Connect</h3>
+        <p class="connect-description">Feel free to reach out! Whether you want to collaborate, ask questions, or just say hi, I’m always happy to hear from you.</p>
+
+        <!-- Center the button group with Flexbox -->
+        <div class="d-flex justify-content-center align-items-center">
+            <!-- Email Button -->
+            <a href="mailto:skandv@andrew.cmu.edu" class="btn btn-primary connect-btn email-btn mx-2">
+                <i class="bi bi-envelope"></i>
+            </a>
+
+            <!-- LinkedIn Button -->
+            <a href="https://www.linkedin.com/in/skandvijay" class="btn btn-info connect-btn linkedin-btn mx-2" target="_blank">
+                <i class="bi bi-linkedin"></i>
+            </a>
+             <!-- Instagram Button -->
+            <a href="https://www.instagram.com/hey.skand/" class="btn btn-danger connect-btn instagram-btn mx-2" target="_blank">
+                <i class="bi bi-instagram"></i>
+            </a>
+
+
+            <!-- Contact Button -->
+            <a href="tel:+14129547409" class="btn btn-success connect-btn contact-btn mx-2">
+                <i class="bi bi-phone"></i>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+
     
 
 <!-- Post your Thoughts-->
