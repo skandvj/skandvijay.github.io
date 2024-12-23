@@ -1,0 +1,99 @@
+/* General Section Styling */
+#entrepreneurship {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0984e3;
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Community Showcase */
+.community-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.community-content {
+    max-width: 500px;
+}
+
+.community-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.community-content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.platform-grid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.platform-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.platform-item img {
+    width: 30px;
+    height: 30px;
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-10px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0984e3;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #555;
+}

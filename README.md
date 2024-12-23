@@ -1,3 +1,2 @@
 # skandvijay.github.io
  
-skand
