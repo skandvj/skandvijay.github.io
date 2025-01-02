@@ -397,6 +397,60 @@ body {
     margin-top: 10px;
     color: #39565a; /* Updated to golden yellow for better visibility */
 }
+/* For small devices like phones */
+@media (max-width: 768px) {
+
+    #achievements {
+        width: 80%; /* More space on smaller screens */
+        top: 60%; /* Adjust the position for mobile */
+        right: 10%; /* Adjust the alignment */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr; /* Stack the card content vertically */
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    .about-text h2 {
+        font-size: 2rem; /* Smaller heading font */
+    }
+
+    .about-text p {
+        font-size: 1rem; /* Smaller paragraph font */
+    }
+
+    .cta-button {
+        font-size: 1rem; /* Reduce button font size */
+        padding: 10px 20px; /* Smaller button */
+    }
+}
+
+/* For very small devices like phones in portrait mode */
+@media (max-width: 480px) {
+
+    #achievements {
+        width: 90%; /* More space */
+        top: 70%; /* Adjust position further down */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Smaller font size */
+    }
+
+    .dynamic-text {
+        font-size: 1.5rem; /* Smaller dynamic text */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* Even smaller button text */
+    }
+}
+
+.menu-btn {
+    padding: 15px;
+    touch-action: manipulation;
+}
+
 
  /* About Section
    ========================================================================== */
@@ -634,6 +688,17 @@ body {
 }
 
 /* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    #achievement-container {
+        flex-direction: column;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .skills-grid {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust grid for smaller screens */
@@ -1050,6 +1115,23 @@ body {
     background: var(--accent-color-light); /* Change color slightly on hover */
     transform: translateY(-2px); /* Slight hover effect */
     cursor: pointer; /* Indicates interactivity */
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #24292e;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    align-items: right;
+}
+
+.github-link:hover {
+    background-color: #0366d6;
 }
 
 
