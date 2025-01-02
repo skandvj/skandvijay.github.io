@@ -5,19 +5,19 @@ gsap.registerPlugin(ScrollTrigger);
 // Achievements Logic
 const achievements = [
     {
-        image: 'Images/award.png',
+        image: '../Images/award.png',
         text: 'x2 Best Employee award from Gap Inc.',
     },
     {
-        image: 'Images/nasscom_certificate.png',
+        image: '../Images/nasscom_certificate.png',
         text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.',
     },
     {
-        image: 'Images/otaku.png',
+        image: '../Images/otaku.png',
         text: 'Founder of fastest growing club at VIT University',
     },
     {
-        image: 'Images/instalogo.png',
+        image: '../Images/instalogo.png',
         text: 'Built a community with 10,000+ daily interaction.',
     },
 ];
