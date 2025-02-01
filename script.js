@@ -1,6 +1,54 @@
 // GSAP Registration
 gsap.registerPlugin(ScrollTrigger);
 
+// Achievements Logic
+// Achievements Logic
+const achievements = [
+    {
+        image: '../Images/award.png',
+        text: 'x2 Best Employee award from Gap Inc.',
+    },
+    {
+        image: '../Images/nasscom_certificate.png',
+        text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.',
+    },
+    {
+        image: '../Images/otaku.png',
+        text: 'Founder of fastest growing club at VIT University',
+    },
+    {
+        image: '../Images/instalogo.png',
+        text: 'Built a community with 10,000+ daily interaction.',
+    },
+];
+
+let currentAchievement = 0;
+const achievementContainer = document.getElementById('achievement-container');
+const achievementImage = document.getElementById('achievement-image');
+const achievementText = document.getElementById('achievement-text');
+
+function updateAchievement() {
+    const achievement = achievements[currentAchievement];
+    achievementImage.src = achievement.image;
+    achievementText.textContent = achievement.text;
+
+    // Fade in
+    achievementContainer.style.opacity = 1;
+
+    // Schedule next achievement
+    setTimeout(() => {
+        // Fade out
+        achievementContainer.style.opacity = 0;
+
+        // Move to the next achievement
+        currentAchievement = (currentAchievement + 1) % achievements.length;
+        setTimeout(updateAchievement, 1000); // Wait for fade-out to finish
+    }, 4000); // Display time for each achievement
+}
+
+// Start achievements cycle
+updateAchievement();
+
 function scheduleCall() {
     // Replace with your Calendly link
     var calendlyLink = "https://calendar.google.com/calendar/u/0/r/week?hl=en";
@@ -133,56 +181,6 @@ function animateParticles() {
     requestAnimationFrame(animateParticles);
 }
 animateParticles();
-
-
-
-// Achievements Logic
-// Achievements Logic
-const achievements = [
-    {
-        image: 'Images/award.png',
-        text: 'x2 Best Employee award from Gap Inc.',
-    },
-    {
-        image: 'Images/nasscom_certificate.png',
-        text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.',
-    },
-    {
-        image: 'Images/otaku.png',
-        text: 'Founder of fastest growing club at VIT University',
-    },
-    {
-        image: 'Images/instalogo.png',
-        text: 'Built a community with 10,000+ daily interaction.',
-    },
-];
-
-let currentAchievement = 0;
-const achievementContainer = document.getElementById('achievement-container');
-const achievementImage = document.getElementById('achievement-image');
-const achievementText = document.getElementById('achievement-text');
-
-function updateAchievement() {
-    const achievement = achievements[currentAchievement];
-    achievementImage.src = achievement.image;
-    achievementText.textContent = achievement.text;
-
-    // Fade in
-    achievementContainer.style.opacity = 1;
-
-    // Schedule next achievement
-    setTimeout(() => {
-        // Fade out
-        achievementContainer.style.opacity = 0;
-
-        // Move to the next achievement
-        currentAchievement = (currentAchievement + 1) % achievements.length;
-        setTimeout(updateAchievement, 1000); // Wait for fade-out to finish
-    }, 4000); // Display time for each achievement
-}
-
-// Start achievements cycle
-updateAchievement();
 
 
 
