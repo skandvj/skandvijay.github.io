@@ -59,7 +59,7 @@ function scheduleCall() {
 
 
 const typingText = document.querySelector('.dynamic-text');
-const words = ['Aspiring Product Manager', 'Data Science Enthusiast', 'Community Builder', 'Former Software Engineer'];
+const words = ['Product Manager', 'AI and Data Science Enthusiast', 'Community Builder'];
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
