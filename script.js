@@ -4,6 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 // Achievements Logic
 // Achievements Logic
 const achievements = [
+
     { image: 'award.png', text: 'x2 Best Employee award from Gap Inc.' },
     { image: 'nasscom_certificate.png', text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.' },
     { image: 'otaku.png', text: 'Founder of fastest growing club at VIT University' },
@@ -114,6 +115,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
 function scheduleCall() {
     // Replace with your Calendly link
     var calendlyLink = "https://calendar.google.com/calendar/u/0/r/week?hl=en";
@@ -124,7 +129,9 @@ function scheduleCall() {
 
 
 const typingText = document.querySelector('.dynamic-text');
+
 const words = ['Product Manager','Artificial Intelligence Advocate', 'Data Science Enthusiast', 'Community Builder'];
+
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {

@@ -738,7 +738,54 @@ body {
     }
 }
 
+/* For small devices like phones */
+@media (max-width: 768px) {
 
+    #achievements {
+        width: 80%; /* More space on smaller screens */
+        top: 60%; /* Adjust the position for mobile */
+        right: 10%; /* Adjust the alignment */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr; /* Stack the card content vertically */
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    .about-text h2 {
+        font-size: 2rem; /* Smaller heading font */
+    }
+
+    .about-text p {
+        font-size: 1rem; /* Smaller paragraph font */
+    }
+
+    .cta-button {
+        font-size: 1rem; /* Reduce button font size */
+        padding: 10px 20px; /* Smaller button */
+    }
+}
+
+/* For very small devices like phones in portrait mode */
+@media (max-width: 480px) {
+
+    #achievements {
+        width: 90%; /* More space */
+        top: 70%; /* Adjust position further down */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Smaller font size */
+    }
+
+    .dynamic-text {
+        font-size: 1.5rem; /* Smaller dynamic text */
+    }
+
+    .cta-button {
+        font-size: 0.9rem; /* Even smaller button text */
+    }
+}
 /* Skill Section */
 .skills-section {
     padding: 60px 0;
