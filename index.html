@@ -31,6 +31,7 @@
                 <a href="#education">Education</a>
                 <a href="#experience" class="dropdown-btn">Experience</a>
                 <a href="#projects">Projects</a>
+                <!-- <a href="#blog">Blogs</a> -->
                 <!-- <a href="#case-studies">Case Studies</a> -->
                 <!-- <a href="#gallery">Gallery</a> -->
                 <a href="#entrepreneurship">Community</a>
@@ -69,38 +70,53 @@
         <div class="hero-visual">
             <canvas id="hero-canvas"></canvas>
             <div id="achievements">
-                <div id="achievement-container">
-                    <img id="achievement-image" src="Images/award.png" alt="Achievement" />
+                <div id="achievement-container" class="achievement-box">
+                    <img id="achievement-image" src="" alt="Achievement" />
                     <p id="achievement-text"></p>
                 </div>
+                
             </div>
         </div>
     </div>
 </section>
 
-    <section id="about-me" class="section about-me">
-        <div class="container">
-            <header class="section-header">
-                <h2 class="section-title">About Me</h2>
-            </header>
-            <div class="about-content">
-                <div class="about-photo">
-                    <img src="Images/Skand Profile.jpeg" alt="Skand Vijay">
-                </div>
-                <div class="about-text">
-                    <p>
-                        Hello! I’m <strong>Skand Vijay,</strong> a driven professional and Master's student in Information Systems at Carnegie Mellon University. With a passion for integrating technology with business strategies, I am continuously learning to stay ahead of future trends. My academic journey includes advanced coursework like Generative AI, Intro to Deep Learning (a Ph.D.-level course), Data Science for Product Managers, and Product Management Essentials. To broaden my expertise, I’m also exploring Accounting and Financial Analytics, Managing Disruptive Technology, and leadership through my role as Vice President of the Analytics Club at CMU Heinz.                    
-                    </p>
-                    <p>
-                        During my tenure at Gap Inc., I earned the prestigious Best Employee of the Year award twice for being the Best Peer to Work With, a testament to my collaborative spirit and dedication. I led impactful projects, including automating financial processes to reduce a $10 million backlog risk and delivering business intelligence solutions that streamlined operations across teams.
-                    </p>
-                    <p>
-                        When I’m not optimizing workflows or launching AI products, I’m deeply committed to my community. I take great pride in organizing events that foster learning and collaboration, and I actively mentor aspiring professionals, helping them achieve their academic and career goals. Engaging with the community energizes me, and I am passionate about supporting others on their journey toward success.
-                    </p>
-                </div>
+<section id="about-me" class="section about-me">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">About Me</h2>
+        </header>
+        <div class="about-content">
+            <div class="about-photo">
+                <img src="Images/Skand Profile.jpeg" alt="Skand Vijay">
+            </div>
+            <div class="about-text" id="about-text">
+
+                         
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+<!-- Blog Section -->
+<!-- <section id="blog" class="section blog-section">
+    <div class="container">
+        <header class="section-header">
+            <h2 class="section-title">Blogs</h2>
+            <p class="section-subtitle">
+                Explore in-depth articles on product management, AI, and business strategies.
+            </p>
+        </header>
+
+        <div class="blog-grid"> -->
+            <!-- Blog Cards will be dynamically injected here -->
+        <!-- </div>
+    </div>
+</section> -->
+
+    
+
+
     
             <section id="skills" class="skills-section">
                 <div class="container">
@@ -294,9 +310,35 @@
     <div id="experience" class="section">
         <div class="section-content">
             <h2 class="section-title">Experience</h2>
+
+
+                
     
             <div class="experience-grid">
                 <!-- CMU Experience Card -->
+
+                <!-- CMU Experience Card -->
+                <div class="exp-study-card b">
+                    <div class="exp-study-image">
+                        <img src="Images/peex.png" alt="CMU" class="company-logo">
+                    </div>
+                    <div class="exp-study-content">
+                        <h3>Research Assistant</h3>
+                        <div class="exp-study-details">
+                            <div class="company-info">
+                                <h4>Privacy Economics Experiment (PeeX) Lab</h4>
+                                <p class="duration">January 2025 - Present</p>
+                            </div>
+                            <div class="experience-details">
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view-more-container">
+                        <!-- <a href="experience/research.html" class="view-more-btn">View More</a> -->
+                    </div>
+                </div>
+
                 <div class="exp-study-card b">
                     <div class="exp-study-image">
                         <img src="Images/cmu.jpg" alt="CMU" class="company-logo">
@@ -392,16 +434,28 @@
     </div>
 </section>
 
-
-
 <!-- Projects Section -->
 <section id="projects" class="section projects">
     <div class="section-content">
         <h2 class="section-title">Projects</h2>
         <div class="projects-grid">
+            <!-- Project Cards will be injected here dynamically by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!-- Link to JavaScript File -->
+<script src="js/projects.js"></script>
+
+
+<!-- Projects Section -->
+<!-- <section id="projects" class="section projects">
+    <div class="section-content">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid"> -->
 
             <!-- Project Card 1 -->
-            <div class="project-card">
+            <!-- <div class="project-card">
                 <div class="project-content">
                     <div class="project-visual">
                         <img src="Images/speechclassification.png" class="project-image" alt="AI Frame Level Speech Classification" />
@@ -421,15 +475,15 @@
                             <span>Pandas</span>
                             <span>NumPy</span>
                             <span>Google Cloud Platform</span>
-                        </div>
+                        </div> -->
                         <!-- <a href="projects/speech-classification.html" class="view-more-btn">View More</a> -->
-                        <a href="https://github.com/skandvj/HW1P2-Frame-Level-Speech-Recognition" class="github-link">GitHub Repository</a>
+                        <!-- <a href="https://github.com/skandvj/HW1P2-Frame-Level-Speech-Recognition" class="github-link">GitHub Repository</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Project Card 2 -->
-            <div class="project-card">
+            <!-- <div class="project-card">
                 <div class="project-content">
                     <div class="project-visual">
                         <img src="Images/sketchai.webp" class="project-image" alt="SketchAI" />
@@ -449,18 +503,18 @@
                             <span>LLM Fine Tuning</span>
                             <span>Generative AI</span>
                             <span>AWS</span>
-                        </div>
+                        </div> -->
                         <!-- <a href="projects/sketchai.html" class="view-more-btn">View More</a> -->
-                        <a href="https://github.com/skandvj/SketchAI--Creates-Sketches-into-Product-Ready-Images" class="github-link">GitHub Repository</a>
+                        <!-- <a href="https://github.com/skandvj/SketchAI--Creates-Sketches-into-Product-Ready-Images" class="github-link">GitHub Repository</a>
 
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 
             <!-- Project Card 3 -->
-            <div class="project-card">
+            <!-- <div class="project-card">
                 <div class="project-content">
                     <div class="project-visual">
                         <img src="Images/virtualasssistant.jpeg" class="project-image" alt="Virtual Assistant for Visually Impaired" />
@@ -479,9 +533,9 @@
                             <span>API Design</span>
                             <span>Pandas</span>
                             <span>Numpy</span>
-                        </div>
+                        </div> -->
                         <!-- <a href="projects/vision-blind.html" class="view-more-btn">View More</a> -->
-                        <a href="https://github.com/skandvj/VisionForBlind" class="github-link">GitHub Repository</a>
+                        <!-- <a href="https://github.com/skandvj/VisionForBlind" class="github-link">GitHub Repository</a>
 
                     </div>
                 </div>
@@ -489,7 +543,7 @@
 
         </div>
     </div>
-</section>
+</section> -->
 
 
     <!-- Case Studies Section -->

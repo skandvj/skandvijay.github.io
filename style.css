@@ -150,11 +150,34 @@ body {
        display: none;
    }
    
+   .achievement-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.achievement-box img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+
 /* Hero Section
     ========================================================================== */
 .hero {
     height: 100vh;
     padding: 0 2rem;
+    background: url('background.jpg') no-repeat center center/cover;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -348,6 +371,127 @@ body {
         gap: 2rem;
     }
 }
+/* bLOGS*/
+/* Blog Section Styling - Matches Experience & Education Sections */
+.blog-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+}
+
+/* Grid Layout for Blog Cards */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Blog Card Styling */
+.blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Blog Card Image */
+.blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Blog Card Content */
+.blog-card-content {
+    padding: 1.5rem;
+}
+
+.blog-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.blog-card-desc {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Read More Button */
+.blog-read-more {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.blog-read-more:hover {
+    background: #0056b3;
+}
+
+/* Animation for Blog Cards */
+.blog-card {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.blog-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.blog-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-section {
+        padding: 2rem 1rem;
+    }
+}
 
 /* Achievements Section Styling */
 #achievements {
@@ -477,79 +621,121 @@ body {
 }
 
 /* About Me Section */
-#about .container {
-    max-width: 1200px;
-    margin: 0 auto; /* Center the container */
-    padding: 0 2rem; /* Side padding */
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-}
-
-/* About Me Content - Card-style Layout */
+/* About Me Section - Full Layout */
 .about-content {
-    display: grid;
-    grid-template-columns: minmax(200px, 300px) 1fr; /* Responsive columns */
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding: 2rem; /* Padding inside the card */
-    background-color: white; /* White background for the card */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    opacity: 1;
-    transform: translateY(0); /* Remove the translateY to keep content in place */
-    transition: all 1s ease-in;
-    max-width: 100%; /* Ensures it's responsive */
-    width: 100%;
+    display: flex;
+    align-items: center; /* Align text and image side-by-side */
+    justify-content: center;
+    gap: 40px; /* Space between image and text */
+    max-width: 1100px; /* Wider section */
+    margin: 0 auto;
+    padding: 50px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Hover Effect for the Card */
-.about-content:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-    transform: translateY(-5px); /* Slightly lift the card */
-}
-
-/* About Me Image */
+/* Profile Image - Left Side, Same Height as Text Box */
 .about-photo img {
-    width: 100%;
-    height: 100%;
+    width: 300px; /* Wider rectangle */
+    height: 400px; /* Taller for better proportion */
     object-fit: cover;
-    border-radius: 10px; /* Slightly rounded corners for the image */
-    transition: var(--transition);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* About Me Text */
+/* About Me Text - Wider Box */
+.about-text {
+    max-width: 750px; /* Wider text box */
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    text-align: left;
+}
+
+/* Section Header */
 .about-text h2 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-color);
     position: relative;
-    text-align: center; /* Center the heading */
+    text-align: left;
+    font-weight: 600;
 }
 
+/* Underline Effect */
 .about-text h2::after {
     content: '';
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%); /* Center the line */
-    bottom: -0.5rem;
-    width: 60px;
+    left: 0;
+    bottom: -8px;
+    width: 100px;
     height: 3px;
     background-color: var(--primary-color);
 }
 
-/* About Me Text Paragraph */
+/* Paragraph Styling */
 .about-text p {
-    color: #555;
+    color: #444;
     line-height: 1.8;
-    margin-bottom: 1.5rem;
-    opacity: 1;
-    text-align: center; /* Center the paragraph text */
+    margin-bottom: 1.2rem;
 }
 
-/* Optional: Animation for elements */
-.about-content.animate {
-    opacity: 1;
-    transform: translateY(0); /* Ensure content appears without shifting */
+/* Last Paragraph */
+.about-text p:last-child {
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin-top: 15px;
+}
+
+/* Strong Text */
+.about-text strong {
+    font-weight: 600;
+    color: #222;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    .about-photo img {
+        width: 260px;
+        height: 360px;
+    }
+
+    .about-text {
+        text-align: left;
+        max-width: 85%;
+    }
+
+    .about-text h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about-photo img {
+        width: 220px;
+        height: 300px;
+    }
+
+    .about-text {
+        max-width: 90%;
+        font-size: 1rem;
+    }
 }
 
 /* For small devices like phones */
@@ -1016,166 +1202,146 @@ body {
     margin: 0;
 }
 /* Project */
-/* Projects Grid */
+/* Improved Projects Section Styling */
+.projects {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #222;
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
 }
 
 /* Project Card */
 .project-card {
     background: white;
-    border-radius: 1rem;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced hover effect */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
 }
 
-/* Visual Section */
+/* Project Image */
 .project-visual {
+    width: 100%;
     height: 220px;
-    padding: 10px;
-    position: relative;
     overflow: hidden;
+    position: relative;
     border-bottom: 1px solid #ddd;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #f9f9f9; /* Fallback for images */
+    justify-content: center;
 }
 
 .project-image {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: auto;
     object-fit: cover;
-    border-radius: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 .project-card:hover .project-image {
-    transform: scale(1.05); /* Subtle zoom effect on hover */
-}
-/* Project image container adjustments */
-.project-visual {
-    height: 200px;
-    position: relative;
+    transform: scale(1.05);
 }
 
-
-/* Content Section */
+/* Project Content */
 .project-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    padding: 15px;
     flex-grow: 1;
 }
 
 .project-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+    text-transform: capitalize;
 }
 
-.project-description {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-.project-tech {
+.project-buttons {
     display: flex;
-    flex-wrap: wrap; /* Allows multiple lines if content overflows */
-    gap: 0.5rem; /* Space between each bubble */
-    margin-top: 1rem;
-}
-
-.project-tech span {
-    background: var(--light-bg); /* Light background for the bubbles */
-    color: var(--text-secondary-color); /* Text color for contrast */
-    padding: 0.5rem 1rem; /* Spacing inside the bubbles */
-    border-radius: 1rem; /* Makes the bubbles rounded */
-    font-size: 0.9rem; /* Keeps the text size consistent */
-    font-weight: 500; /* Slightly bold text for readability */
-    border: 1px solid var(--border-color); /* Optional: Adds a subtle border */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adds depth */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.project-tech span:hover {
-    background: var(--accent-color-light); /* Change color slightly on hover */
-    transform: translateY(-2px); /* Slight hover effect */
-    cursor: pointer; /* Indicates interactivity */
-}
-
-.github-link {
-    display: inline-block;
+    justify-content: center;
+    gap: 10px;
     margin-top: 10px;
+}
+
+.view-more-btn, .github-link {
+    display: inline-block;
     padding: 10px 15px;
-    background-color: #24292e;
-    color: #fff;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 6px;
     text-decoration: none;
-    font-size: 14px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    align-items: right;
-}
-
-.github-link:hover {
-    background-color: #0366d6;
-}
-
-
-/* Button Styles */
-.view-more-btn {
-    background: var(--accent-color);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s;
     text-align: center;
-    margin-top: auto;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-size: 1rem;
-    font-weight: 500;
+}
+
+.view-more-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
 }
 
 .view-more-btn:hover {
-    background: var(--accent-color-dark);
+    background: #0056b3;
     transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 123, 255, 0.4);
 }
 
-/* Responsive Adjustments */
+.github-link {
+    background: #333;
+    color: white;
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.github-link:hover {
+    background: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
-        padding: 1rem;
     }
 
-    .project-visual {
-        height: 180px;
-    }
-
-    .project-content {
-        padding: 1rem;
-    }
-
-    .view-more-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+    .project-title {
+        font-size: 1.4rem;
     }
 }
-
-
 /* Case Studies */
 .case-study-card a{
     background: white;
@@ -1695,6 +1861,41 @@ body {
 .view-more-btn:focus {
     outline: none; /* Remove default focus outline */
     border: 2px solid #0056b3; /* Custom border for focus state */
+}
+
+.github-link {
+    display: inline-block;
+    background-color: #000000; /* Primary button color */
+    color: #ffffff; /* White text */
+    padding: 12px 20px; /* Adjust padding for a comfortable button size */
+    font-size: 16px; /* Legible font size */
+    font-weight: 600; /* Slightly bold for emphasis */
+    text-align: center; /* Center the text inside the button */
+    border-radius: 30px; /* Rounded corners for a modern look */
+    text-decoration: none; /* Remove underline from link */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Soft shadow for depth */
+    margin-top: 15px; /* Add some space above the button */
+}
+
+/* Hover Effects */
+.github-link:hover {
+    background-color: #000000; /* Darker shade on hover */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Stronger shadow on hover */
+    transform: translateY(-2px); /* Slight upward movement for interaction */
+}
+
+/* Active state to maintain button press */
+.github-link:active {
+    background-color: #0e0f11; /* Even darker shade for active state */
+    box-shadow: none; /* Remove shadow for active state */
+    transform: translateY(0); /* Reset the transform */
+}
+
+/* Focus state for accessibility */
+.github-link:focus {
+    outline: none; /* Remove default focus outline */
+    border: 2px solid #000000; /* Custom border for focus state */
 }
 
 /* Animations */

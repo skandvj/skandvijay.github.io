@@ -4,50 +4,120 @@ gsap.registerPlugin(ScrollTrigger);
 // Achievements Logic
 // Achievements Logic
 const achievements = [
-    {
-        image: '../Images/award.png',
-        text: 'x2 Best Employee award from Gap Inc.',
-    },
-    {
-        image: '../Images/nasscom_certificate.png',
-        text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.',
-    },
-    {
-        image: '../Images/otaku.png',
-        text: 'Founder of fastest growing club at VIT University',
-    },
-    {
-        image: '../Images/instalogo.png',
-        text: 'Built a community with 10,000+ daily interaction.',
-    },
+
+    { image: 'award.png', text: 'x2 Best Employee award from Gap Inc.' },
+    { image: 'nasscom_certificate.png', text: 'Gold Medal for IOT Domain Specialist exam by Govt. of India.' },
+    { image: 'otaku.png', text: 'Founder of fastest growing club at VIT University' },
+    { image: 'instalogo.png', text: 'Built a community with 10,000+ daily interactions.' },
 ];
 
+
 let currentAchievement = 0;
-const achievementContainer = document.getElementById('achievement-container');
-const achievementImage = document.getElementById('achievement-image');
-const achievementText = document.getElementById('achievement-text');
 
-function updateAchievement() {
-    const achievement = achievements[currentAchievement];
-    achievementImage.src = achievement.image;
-    achievementText.textContent = achievement.text;
+// Wait until DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+    const achievementContainer = document.getElementById('achievement-container');
+    const achievementImage = document.getElementById('achievement-image');
+    const achievementText = document.getElementById('achievement-text');
 
-    // Fade in
-    achievementContainer.style.opacity = 1;
+    if (!achievementContainer || !achievementImage || !achievementText) {
+        console.error("One or more achievement elements are missing!");
+        return;
+    }
 
-    // Schedule next achievement
-    setTimeout(() => {
-        // Fade out
+    function updateAchievement() {
+        const achievement = achievements[currentAchievement];
+
+        // Fade Out Effect
         achievementContainer.style.opacity = 0;
 
-        // Move to the next achievement
-        currentAchievement = (currentAchievement + 1) % achievements.length;
-        setTimeout(updateAchievement, 1000); // Wait for fade-out to finish
-    }, 4000); // Display time for each achievement
-}
+        setTimeout(() => {
+            // Update content
+            achievementImage.src = achievement.image;
+            achievementText.textContent = achievement.text;
 
-// Start achievements cycle
-updateAchievement();
+            // Fade In Effect
+            achievementContainer.style.opacity = 1;
+
+            // Move to the next achievement
+            currentAchievement = (currentAchievement + 1) % achievements.length;
+        }, 500); // Sync with CSS fade transition
+
+        setTimeout(updateAchievement, 4000); // Display time for each achievement
+    }
+
+    // Start the achievement cycle
+    updateAchievement();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutText = document.getElementById("about-text");
+
+   
+    const content = `
+        <p>Hi, I am Skand, I never set out to be a product manager, but looking back, it feels inevitable. My journey began in the world of Software Product Management, knee-deep in data pipelines, backend systems, and automation frameworks. At first, it was all about solving technical problems—optimizing queries, debugging code, and making things run faster. But over time, I realized that the real challenge wasn’t just writing better code—it was figuring out <strong>why</strong> we were building things in the first place. That’s when I became obsessed with <strong>product thinking</strong>.</p>
+
+
+        <p>But that wasn’t enough. I wanted to go deeper into <strong>AI-driven decision-making</strong>, not just automation. At Carnegie Mellon University, I immersed myself in <strong>machine learning, business strategy, and analytics</strong>, bridging the gap between AI’s raw power and real-world business needs. I worked with researchers analyzing <strong>how ad-blockers shape consumer behavior</strong>, exploring how AI could make sense of human attention. In every role, I realized that great product management isn’t about features or roadmaps—it’s about asking the right questions and letting <strong>AI unlock answers we never knew existed</strong>.</p>
+
+        <p>Today, I thrive at the intersection of <strong>AI, business, and product innovation</strong>. My obsession? Building products that don’t just <strong>react</strong> to data but can <strong>anticipate and shape the future</strong>. Whether it’s AI-driven automation, market-defining analytics, or intelligent systems that enhance decision-making, my focus is on making sure <strong>technology serves people—not the other way around</strong>.</p>
+
+        <p>So here I am—still solving problems, still building, still questioning everything. Not just a product manager, but a storyteller, a strategist, and a firm believer that the best products aren’t just built—they evolve, adapt, and learn. Just like us. 🚀</p>
+    `;
+    aboutText.innerHTML = content;
+});
+
+{/* <p>One of my most defining moments was when I found myself staring at a <strong>massive financial data problem</strong>—a backlog worth millions in unprocessed journal entries. Engineers saw it as a database issue. Finance teams saw it as a process failure. I saw it as an opportunity. Instead of just fixing a system, I designed an <strong>AI-powered workflow automation</strong> that didn't just process data—it predicted <strong>bottlenecks before they happened</strong>, giving finance teams insights instead of headaches. That single initiative turned into a product, saving countless hours and financial risks.</p> */}
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const blogPosts = [
+        {
+            title: "Optimizing eCommerce with Machine Learning: Predicting Customer Lifetime Value for Samsung",
+            description: "Discover how ML-driven CLV prediction enhances customer retention and engagement.",
+            image: "Images/samsung.png",
+            link: "experience/blog-samsung-clv.html"
+        },
+        {
+            title: "Understanding the Socioeconomic Impact of Ad-Blockers and Anti-Trackers",
+            description: "Explore how income levels influence the adoption of ad-blockers and their impact on digital privacy and advertising.",
+            image: "Images/socio-economic.png",
+            link: "experience/blog-adblockers.html"
+        }
+        // ,
+        // {
+        //     title: "AI-Powered Product Visualization – The Future of Augmented Reality",
+        //     description: "Exploring how AI and AR can revolutionize eCommerce through immersive product experiences.",
+        //     image: "Images/ai_product_visualization.jpg",
+        //     link: "blog-ai-visualization.html"
+        // }
+    ];
+
+    const blogGrid = document.querySelector('.blog-grid');
+
+    blogPosts.forEach(post => {
+        const blogHTML = `
+            <div class="blog-card">
+                <img src="${post.image}" alt="${post.title}">
+                <div class="blog-card-content">
+                    <h3 class="blog-card-title">${post.title}</h3>
+                    <p class="blog-card-desc">${post.description}</p>
+                    <a href="${post.link}" class="blog-read-more">Read More</a>
+                </div>
+            </div>
+        `;
+        blogGrid.innerHTML += blogHTML;
+    });
+});
+
+
+
+
+
+
 
 function scheduleCall() {
     // Replace with your Calendly link
@@ -59,7 +129,9 @@ function scheduleCall() {
 
 
 const typingText = document.querySelector('.dynamic-text');
-const words = ['Product Manager', 'AI and Data Science Enthusiast', 'Community Builder'];
+
+const words = ['Product Manager','Artificial Intelligence Advocate', 'Data Science Enthusiast', 'Community Builder'];
+
 let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function typeEffect() {
@@ -88,6 +160,67 @@ document.getElementById('scroll-to-top').addEventListener('click', () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const projects = [
+
+        {
+            title: "Predictive Sales Performance Optimization for Netflix",
+            image: "netflix.png",
+            // viewMoreLink: "projects/sketchai.html",
+            githubLink: "https://github.com/skandvj/Predictive-Sales-Performance-Optimization-for-Netflix.git"
+        },
+
+        {
+            title: "Customer Lifetime Value (CLV) & Market Segmentation using Machine Learning",
+            image: "starbucks.png",
+            // viewMoreLink: "projects/sketchai.html",
+            githubLink: "https://github.com/skandvj/Customer-Lifetime-Value-CLV-Market-Segmentation-using-Machine-Learning"
+        },
+
+        {
+            title: "SketchAI - Convert Sketches into Product Ready Images",
+            image: "Images/sketchai.webp",
+            viewMoreLink: "projects/sketchai.html",
+            githubLink: "https://github.com/skandvj/SketchAI--Creates-Sketches-into-Product-Ready-Images"
+        },
+        {
+            title: "AI-Powered Frame-Level Speech Classification",
+            image: "Images/speechclassification.png",
+            viewMoreLink: "projects/speech-classification.html",
+            githubLink: "https://github.com/skandvj/HW1P2-Frame-Level-Speech-Recognition"
+        },
+        {
+            title: "Virtual Assistant for Visually Impaired",
+            image: "Images/virtualasssistant.jpeg",
+            viewMoreLink: "projects/vision-blind.html",
+            githubLink: "https://github.com/skandvj/VisionForBlind"
+        }
+        
+    ];
+
+    const projectsGrid = document.querySelector(".projects-grid");
+
+    projects.forEach(project => {
+        const projectHTML = `
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-visual">
+                        <img src="${project.image}" class="project-image" alt="${project.title}" />
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">${project.title}</h3>
+                        <div class="project-buttons">
+                       
+                            <a href="${project.githubLink}" class="github-link" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        projectsGrid.innerHTML += projectHTML;
+    });
+});
+{/* <a href="${project.viewMoreLink}" class="view-more-btn">View More</a> */}
 
 
 // Helper function to check if an element is in the viewport
