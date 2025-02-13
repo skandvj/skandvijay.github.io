@@ -113,12 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-
-
-
-
-
 function scheduleCall() {
     // Replace with your Calendly link
     var calendlyLink = "https://calendar.google.com/calendar/u/0/r/week?hl=en";
@@ -162,6 +156,26 @@ document.getElementById('scroll-to-top').addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
+        {
+            title: "SketchAI - Convert Sketches into Product Ready Images",
+            image: "Images/sketchai.webp",
+            viewMoreLink: "projects/sketchai.html",
+            githubLink: "https://github.com/skandvj/SketchAI--Creates-Sketches-into-Product-Ready-Images"
+        },
+
+        {
+            title: "Retrieval-Augmented Generation (RAG) System for NLP-Driven Document Search",
+            image: "nlp.png",
+            // viewMoreLink: "projects/sketchai.html",
+            githubLink: "https://github.com/skandvj/Retrieval-Augmented-Generation-RAG-System-for-NLP-Driven-Document-Search"
+        },
+
+        {
+            title: "Precision-Tuned Prompt Engineering for LLM Performance Optimization",
+            image: "prompt.png",
+            // viewMoreLink: "projects/sketchai.html",
+            githubLink: "https://github.com/skandvj/Precision-Tuned-Prompt-Engineering-for-LLM-Performance-Optimization"
+        },
 
         {
             title: "Predictive Sales Performance Optimization for Netflix",
@@ -175,13 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
             image: "starbucks.png",
             // viewMoreLink: "projects/sketchai.html",
             githubLink: "https://github.com/skandvj/Customer-Lifetime-Value-CLV-Market-Segmentation-using-Machine-Learning"
-        },
-
-        {
-            title: "SketchAI - Convert Sketches into Product Ready Images",
-            image: "Images/sketchai.webp",
-            viewMoreLink: "projects/sketchai.html",
-            githubLink: "https://github.com/skandvj/SketchAI--Creates-Sketches-into-Product-Ready-Images"
         },
         {
             title: "AI-Powered Frame-Level Speech Classification",
